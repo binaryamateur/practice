@@ -81,27 +81,35 @@ const studentList = arrayStudents.map(student => {
     }
 });
 
+function debounce(func, ms){
+    let timeout;
+    return function (){
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, arguments), ms);
+    };
+};
+
+function filter(e, studentList){
+     console.log(studentList);
+     const input = e.target.value.toLowerCase();
+     studentList.forEach(student => {
+         const show = student.sname.includes(input) || student.address.includes(input) || student.class.includes(input);
+         if(!show){
+             if(!student.card.classList.contains("hide")){
+                 student.card.classList.add("hide");
+             }
+         }
+         else{
+             if(student.card.classList.contains("hide")){
+                 student.card.classList.remove("hide");
+             }
+         }
+ 
+     });
+}
 
 const searchInput = document.querySelector("#search");
-searchInput.addEventListener("input",function(e){
-    // console.log(e.target.value);
-    console.log(studentList);
-    const input = e.target.value.toLowerCase();
-    studentList.forEach(student => {
-        const show = student.sname.includes(input) || student.address.includes(input) || student.class.includes(input);
-        if(!show){
-            if(!student.card.classList.contains("hide")){
-                student.card.classList.add("hide");
-            }
-        }
-        else{
-            if(student.card.classList.contains("hide")){
-                student.card.classList.remove("hide");
-            }
-        }
-
-    });
-})
-
+let debouncedFilter = debounce(filter,1000);
+searchInput.addEventListener("input",(e) => debouncedFilter(e, studentList))
 
 console.log(arrayStudents);
