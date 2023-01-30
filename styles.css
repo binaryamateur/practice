@@ -19,11 +19,11 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card {
     border: 1px solid blue;
-    width: 15rem;
     height: 25rem;
     border-radius: 10px;
     margin: 10px;
@@ -31,6 +31,7 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     overflow: scroll;
+    flex: 0 0 15rem;
 }   
 
 .profile-image{
