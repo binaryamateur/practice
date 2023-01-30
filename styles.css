@@ -1,0 +1,88 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #edf0f5;
+}
+
+
+h1{
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border: 1px solid blue;
+    width: 15rem;
+    height: 25rem;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+}   
+
+.profile-image{
+    width: 90%;
+    border-radius: 10px;
+    max-height: 20vh;
+    margin-top: 9px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content{
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 12px;
+    display: block;
+    line-height: 1.5rem;    
+}
+
+button{
+    min-width: 7rem;
+    height: 2rem;
+}
+
+.delete-button {
+    display: block;
+    margin: 20px auto 10px;
+    /* text-align: center; */
+}
+
+.search-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search{
+    min-width: 20rem;
+    min-height: 2rem;
+    margin:0px 20px;
+}
+
+.search-label{
+    font-size: large;
+}
+
+.add-button{
+    text-align: center;
+    margin: 10px;
+}
+
+.hide{
+    display: none;
+}
