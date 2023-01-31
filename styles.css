@@ -1,18 +1,29 @@
 *,
 ::before,
 ::after{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
 body{
-    background-color: #edf0f5;
+    /* background: #DFC2F2; */
+	background-image: linear-gradient( to right, #ffffb3,#ffe6e6);
+	background-attachment: fixed;	
+	background-size: cover;
+}
+
+main{
+    display: flex;
+    justify-content: center;
 }
 
 
 h1{
-    text-align: center;
+    /* text-align: center; */
     font-size: xxx-large;
+    padding: 10px 30px;
 }
 
 .list{
@@ -20,10 +31,13 @@ h1{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-basis: 60rem;
+    margin-bottom: 3rem;
 }
 
 .card {
-    border: 1px solid blue;
+    box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
     height: 25rem;
     border-radius: 10px;
     margin: 10px;
@@ -31,7 +45,7 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     overflow: scroll;
-    flex: 0 0 15rem;
+    flex: 0 0 18rem;
 }   
 
 .profile-image{
@@ -60,7 +74,21 @@ button{
 .delete-button {
     display: block;
     margin: 20px auto 10px;
+    visibility: hidden;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    font-weight: 600;
+    min-height: 3rem;
+    border: 1px solid rgba(0,0,0,0.1);
     /* text-align: center; */
+}
+
+.delete-button:hover{
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0;
+    box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
 }
 
 .search-wrapper{
@@ -79,11 +107,79 @@ button{
     font-size: large;
 }
 
-.add-button{
+.add-button-wrapper{
     text-align: center;
     margin: 10px;
 }
 
-.hide{
-    display: none;
+.add-button{
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    font-weight: 600;
+    min-height: 3rem;
+    border: 1px solid rgba(0,0,0,0.1);
 }
+.add-button:hover{
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0;
+    box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+input {
+font-family: inherit;
+width: 40%;
+border: 0;
+border-bottom: 2px solid #9b9b9b;
+outline: 0;
+font-size: 1.3rem;
+color: black;
+padding: 7px 0;
+background: transparent;
+transition: border-color 0.2s;
+}
+
+label {
+position: relative;
+top: 0;
+display: block;
+transition: 0.2s;
+font-size: 1rem;
+color: black;
+font-weight: bold;
+}
+
+input:focus {
+padding-bottom: 6px;
+font-weight: 700;
+border-width: 3px;
+border-image: linear-gradient(to right, red, violet);
+border-image-slice: 1;
+}
+input:focus ~ label {
+position: absolute;
+top: 0;
+display: block;
+transition: 0.2s;
+font-size: 1rem;
+color: #11998e;
+font-weight: 700;
+}
+
+/* reset input */
+input:required, input:invalid {
+box-shadow: none;
+}
+
+.card:hover .delete-button{
+    visibility: visible;
+}
+
+.header{
+    padding: 1rem;
+    background-color: rgb(175, 17, 186);
+    color: #0bf87e;
+    margin-bottom: 60px;
+}
+

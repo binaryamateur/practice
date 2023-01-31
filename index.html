@@ -12,16 +12,20 @@
     <title>Student Portral</title>
 </head>
 <body>
-    <h1>Student Portral</h1>
+    <div class="header">
+        <h1>Student Portral</h1>
+    </div>
     <div class="search-wrapper">
-        <label class="search-label" for="search">Search:</label><br>
-        <input type="text" id="search" name="search">
+        <!-- <label class="search-label" for="search">Search:</label><br> -->
+        <input type="text" id="search" name="search" placeholder="Search Student">
     </div>
     <br>
-    <div class="add-button">
-        <button onclick="window.location.href = 'form.html';">Add Student</button>
+    <div class="add-button-wrapper">
+        <button class="add-button" onclick="window.location.href = 'form.html';">Add Student</button>
     </div>
-    <div class = "list"></div>
+    <main>
+        <div class = "list"></div>
+    </main>
     <script async src="script.js" type="module"/>
 </body>
 </html>
