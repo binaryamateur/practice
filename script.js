@@ -74,9 +74,10 @@ const studentList = arrayStudents.map(student => {
     newCard.append(delButton);
     list.append(newCard);
     return {
-        sname: student.sname.toLowerCase(),
-        address: student.address.toLowerCase(),
-        class: student.class.toLowerCase(),
+        sname: student.sname,
+        address: student.address,
+        class: student.class,
+        image: student.image,
         card: newCard
     }
 });
@@ -90,22 +91,29 @@ function debounce(func, ms){
 };
 
 function filter(e, studentList){
-     console.log(studentList);
-     const input = e.target.value.toLowerCase();
-     const list = document.querySelector(".list");
-     list.innerHTML = "";
-     studentList.forEach(student => {
-         const show = student.sname.includes(input) || student.address.includes(input) || student.class.includes(input);
-         if(show){
-             list.append(student.card);
-         }
-        //  else{
-        //      if(student.card.classList.contains("hide")){
-        //          student.card.classList.remove("hide");
-        //      }
-        //  }
- 
-     });
+    const input = e.target.value.toLowerCase();
+    const list = document.querySelector(".list");
+    const filteredList = studentList.map((student, index) => {
+        console.log(student);
+        const show = student.sname.toLowerCase().includes(input) || student.address.toLowerCase().includes(input) || student.class.toLowerCase().includes(input);
+        console.log(index, show);
+        if(show)
+            return `
+            <div class = "card">
+                <img src = ${student.image} class = "profile-image"/>
+                <div class = "content">
+                    Name: ${student.sname} <br> 
+                    Address: ${student.address} <br>
+                    Class: ${student.class}
+                </div>
+                <button id = ${index} class = "delete-button">Delete</button>
+            </div>
+            `
+        else{
+            return "";
+        }
+    }).join("");
+    list.innerHTML = filteredList;
 }
 
 const searchInput = document.querySelector("#search");
