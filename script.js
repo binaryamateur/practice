@@ -92,18 +92,18 @@ function debounce(func, ms){
 function filter(e, studentList){
      console.log(studentList);
      const input = e.target.value.toLowerCase();
+     const list = document.querySelector(".list");
+     list.innerHTML = "";
      studentList.forEach(student => {
          const show = student.sname.includes(input) || student.address.includes(input) || student.class.includes(input);
-         if(!show){
-             if(!student.card.classList.contains("hide")){
-                 student.card.classList.add("hide");
-             }
+         if(show){
+             list.append(student.card);
          }
-         else{
-             if(student.card.classList.contains("hide")){
-                 student.card.classList.remove("hide");
-             }
-         }
+        //  else{
+        //      if(student.card.classList.contains("hide")){
+        //          student.card.classList.remove("hide");
+        //      }
+        //  }
  
      });
 }
