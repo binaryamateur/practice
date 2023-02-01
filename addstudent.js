@@ -1,3 +1,5 @@
+import { imageList } from "./constants.js";
+
 const ele = document.querySelector("form");
 ele.addEventListener("submit", function(e){
     e.preventDefault();
@@ -5,11 +7,12 @@ ele.addEventListener("submit", function(e){
     const address = document.querySelector("#address").value;
     const sclass = document.querySelector("#class").value;
     let arrayStudents = JSON.parse(localStorage.getItem("arrayStudents")).data;
+    let imageIndex = Math.floor(Math.random() * 5);
     arrayStudents.push({
         sname: sname,
         address: address,
         class: sclass,
-        image: "example_image.jpeg"
+        image: imageList[imageIndex]
     });
     localStorage.setItem("arrayStudents",JSON.stringify({data: arrayStudents}))
     console.log(arrayStudents);
