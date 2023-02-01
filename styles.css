@@ -101,6 +101,7 @@ button{
     min-width: 20rem;
     min-height: 2rem;
     margin:0px 20px;
+    
 }
 
 .search-label{
@@ -128,49 +129,27 @@ button{
 }
 
 input {
-font-family: inherit;
-width: 40%;
-border: 0;
-border-bottom: 2px solid #9b9b9b;
-outline: 0;
-font-size: 1.3rem;
-color: black;
-padding: 7px 0;
-background: transparent;
-transition: border-color 0.2s;
+    font-family: inherit;
+    width: 40%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
 }
 
-label {
-position: relative;
-top: 0;
-display: block;
-transition: 0.2s;
-font-size: 1rem;
-color: black;
-font-weight: bold;
-}
 
 input:focus {
-padding-bottom: 6px;
-font-weight: 700;
-border-width: 3px;
-border-image: linear-gradient(to right, red, violet);
-border-image-slice: 1;
-}
-input:focus ~ label {
-position: absolute;
-top: 0;
-display: block;
-transition: 0.2s;
-font-size: 1rem;
-color: #11998e;
-font-weight: 700;
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-color: darkcyan;
+    border-image-slice: 1;
 }
 
-/* reset input */
-input:required, input:invalid {
-box-shadow: none;
-}
 
 .card:hover .delete-button{
     visibility: visible;
@@ -183,3 +162,37 @@ box-shadow: none;
     margin-bottom: 60px;
 }
 
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    align-items: center;
+    gap: 20px;
+    /* flex-basis: 50rem; */
+}
+
+form{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-wrapper{
+    margin-top: 25px;
+}
+
+.loader{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 10px;
+}
+
+.show-loader{
+    background: url("data:image/svg+xml,%3Csvg version='1.1' id='L9' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 80 80' enable-background='new 0 0 0 0' xml:space='preserve' class='loader hide'%3E%3Cpath fill='darkcyan' d='M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50'%3E%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' dur='1s' from='0 50 50' to='360 50 50' repeatCount='indefinite' /%3E%3C/path%3E%3C/svg%3E") no-repeat 99.5% center;
+    background-repeat: no-repeat;
+}

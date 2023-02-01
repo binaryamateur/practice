@@ -1,10 +1,9 @@
-const ele = document.querySelector("form")
+const ele = document.querySelector("form");
 ele.addEventListener("submit", function(e){
     e.preventDefault();
-    const sname = e.target.elements.sname.value;
-    const address = e.target.elements.address.value;
-    const sclass = e.target.elements.class.value;
-    // console.log(localStorage);  
+    const sname = document.querySelector("#sname").value;
+    const address = document.querySelector("#address").value;
+    const sclass = document.querySelector("#class").value;
     let arrayStudents = JSON.parse(localStorage.getItem("arrayStudents")).data;
     arrayStudents.push({
         sname: sname,
@@ -14,5 +13,9 @@ ele.addEventListener("submit", function(e){
     });
     localStorage.setItem("arrayStudents",JSON.stringify({data: arrayStudents}))
     console.log(arrayStudents);
+    window.location.href = "index.html";
+})
+
+const back = document.querySelector("#back").addEventListener("click", function(){
     window.location.href = "index.html";
 })

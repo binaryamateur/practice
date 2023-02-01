@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Add Student Form</title>
 </head>
 <body>
-    <form>
-        <label class="search-label" for="sname">Student name:</label><br>
-        <input type="text" id="sname" name="sname"><br>
-        <label for="Address">Address:</label><br>
-        <input type="text" id="address" name="address"><br>
-        <label for="Class">Class:</label><br>
-        <input type="text" id="class" name="class">
-        <button id ="submit">Submit</button>
-    </form>
+    <div class="header">
+        <h1>Student Portral</h1>
+    </div>
+    <div class="form-wrapper">
+        <h1>Student Form</h1>
+        <form>
+            <input type="text" id="sname" name="sname" placeholder="Student Name" required><br>
+            <input type="text" id="address" name="address" placeholder="Address" required><br>
+            <input type="text" id="class" name="class" placeholder="Class" required>
+            <div class="button-wrapper">
+                <button type="submit" id ="submit" class="add-button">Submit</button>
+                <button id ="back" class="add-button">Back</button>
+            </div>
+        </form>
+        
+    </div>
     <script async src = "form.js" type="module"/>
 </body>
 </html>

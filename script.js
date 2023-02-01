@@ -104,10 +104,14 @@ function filter(e){
         }
     }).join("");
     list.innerHTML = filteredList;
+    document.querySelector("#search").classList.remove("show-loader");
 }
 
 const searchInput = document.querySelector("#search");
 let debouncedFilter = debounce(filter,1000);
-searchInput.addEventListener("input",(e) => debouncedFilter(e))
+searchInput.addEventListener("input",(e) => {
+    document.querySelector("#search").classList.add("show-loader");    
+    debouncedFilter(e);
+})
 
 console.log(arrayStudents);
